@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo" data-edit-type="text" data-edit-key="siteTitle">
+        My Portfolio
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="loginBtn" class="btn-outline">Login</button>
+    </div>
+  </header>
+
+  <!-- Edit Toolbar (shown only in edit mode) -->
+  <div id="editToolbar" class="edit-toolbar">
+    <span>Edit mode</span>
+    <div class="edit-toolbar-actions">
+      <button id="saveContentBtn" class="btn-primary btn-small">Save</button>
+      <button id="cancelContentBtn" class="btn-outline btn-small">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span id="closeLoginModal" class="modal-close">&times;</span>
+      <h2>Enter Edit Token</h2>
+      <p class="modal-subtitle">
+        This is a simple front-end login. Do not use for real security.
+      </p>
+      <input
+        type="password"
+        id="tokenInput"
+        placeholder="Enter token"
+        class="modal-input"
+      />
+      <p id="loginError" class="error-text"></p>
+      <button id="submitTokenBtn" class="btn-primary modal-btn">Login</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="section hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1
+          class="hero-title"
+          data-edit-type="text"
+          data-edit-key="heroTitle"
+        >
+          Hi, I’m Vijesh - Software Engineer & Developer
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-edit-type="text"
+          data-edit-key="heroSubtitle"
+        >
+          I working on automation testing and devops tools. I love building
+          efficient and scalable software solutions.
+          <p></p>
+        <button
+          class="btn-primary"
+          onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})"
+        >
+          View Projects
+        </button>
+      </div>
+      <div class="hero-image-wrapper editable-image" data-edit-key="heroImage">
+        <img
+          src="https://res.cloudinary.com/ddoajzjwt/image/upload/v1764178875/veda_mxsh4e.png"
+          alt="Profile"
+          data-edit-type="image"
+        />
+        <div class="image-controls">
+          <button class="btn-ghost change-url-btn">Change URL</button>
+          <button class="btn-ghost random-image-btn">Random</button>
+          <button class="btn-ghost revert-image-btn">Original</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p
+        class="section-text"
+        data-edit-type="text"
+        data-edit-key="aboutText"
+      >
+        I’m a frontend developer who loves turning ideas into clean, responsive
+        web experiences. I enjoy working with modern tools and focusing on user
+        experience.
+      </p>
+      <ul class="pill-list">
+        <li
+          class="pill"
+          data-edit-type="text"
+          data-edit-key="skill1"
+        >
+          JavaScript &amp; TypeScript
+        </li>
+        <li
+          class="pill"
+          data-edit-type="text"
+          data-edit-key="skill2"
+        >
+          React &amp; UI Design
+        </li>
+        <li
+          class="pill"
+          data-edit-type="text"
+          data-edit-key="skill3"
+        >
+          Responsive Web Apps
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid projects-grid">
+        <!-- Project 1 -->
+        <article class="card">
+          <div
+            class="card-image editable-image"
+            data-edit-key="project1Image"
+          >
+            <img
+              src="https://picsum.photos/seed/project1-default/600/400"
+              alt="Project 1"
+              data-edit-type="image"
+            />
+            <div class="image-controls">
+              <button class="btn-ghost change-url-btn">Change URL</button>
+              <button class="btn-ghost random-image-btn">Random</button>
+              <button class="btn-ghost revert-image-btn">Original</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3
+              class="card-title"
+              data-edit-type="text"
+              data-edit-key="project1Title"
+            >
+              Project One
+            </h3>
+            <p
+              class="card-text"
+              data-edit-type="text"
+              data-edit-key="project1Desc"
+            >
+              A modern landing page built with responsive layout and smooth
+              animations.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div
+            class="card-image editable-image"
+            data-edit-key="project2Image"
+          >
+            <img
+              src="https://picsum.photos/seed/project2-default/600/400"
+              alt="Project 2"
+              data-edit-type="image"
+            />
+            <div class="image-controls">
+              <button class="btn-ghost change-url-btn">Change URL</button>
+              <button class="btn-ghost random-image-btn">Random</button>
+              <button class="btn-ghost revert-image-btn">Original</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3
+              class="card-title"
+              data-edit-type="text"
+              data-edit-key="project2Title"
+            >
+              Project Two
+            </h3>
+            <p
+              class="card-text"
+              data-edit-type="text"
+              data-edit-key="project2Desc"
+            >
+              A personal dashboard concept with cards, charts, and clean UI.
+            </p>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div
+            class="card-image editable-image"
+            data-edit-key="project3Image"
+          >
+            <img
+              src="https://picsum.photos/seed/project3-default/600/400"
+              alt="Project 3"
+              data-edit-type="image"
+            />
+            <div class="image-controls">
+              <button class="btn-ghost change-url-btn">Change URL</button>
+              <button class="btn-ghost random-image-btn">Random</button>
+              <button class="btn-ghost revert-image-btn">Original</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3
+              class="card-title"
+              data-edit-type="text"
+              data-edit-key="project3Title"
+            >
+              Project Three
+            </h3>
+            <p
+              class="card-text"
+              data-edit-type="text"
+              data-edit-key="project3Desc"
+            >
+              A simple portfolio site template for showcasing work and contact
+              info.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <div class="grid gallery-grid">
+        <div
+          class="gallery-item editable-image"
+          data-edit-key="gallery1Image"
+        >
+          <img
+            src="https://picsum.photos/seed/gallery1-default/400/300"
+            alt="Gallery 1"
+            data-edit-type="image"
+          />
+          <div class="image-controls">
+            <button class="btn-ghost change-url-btn">Change URL</button>
+            <button class="btn-ghost random-image-btn">Random</button>
+            <button class="btn-ghost revert-image-btn">Original</button>
+          </div>
+        </div>
+        <div
+          class="gallery-item editable-image"
+          data-edit-key="gallery2Image"
+        >
+          <img
+            src="https://picsum.photos/seed/gallery2-default/400/300"
+            alt="Gallery 2"
+            data-edit-type="image"
+          />
+          <div class="image-controls">
+            <button class="btn-ghost change-url-btn">Change URL</button>
+            <button class="btn-ghost random-image-btn">Random</button>
+            <button class="btn-ghost revert-image-btn">Original</button>
+          </div>
+        </div>
+        <div
+          class="gallery-item editable-image"
+          data-edit-key="gallery3Image"
+        >
+          <img
+            src="https://picsum.photos/seed/gallery3-default/400/300"
+            alt="Gallery 3"
+            data-edit-type="image"
+          />
+          <div class="image-controls">
+            <button class="btn-ghost change-url-btn">Change URL</button>
+            <button class="btn-ghost random-image-btn">Random</button>
+            <button class="btn-ghost revert-image-btn">Original</button>
+          </div>
+        </div>
+        <div
+          class="gallery-item editable-image"
+          data-edit-key="gallery4Image"
+        >
+          <img
+            src="https://picsum.photos/seed/gallery4-default/400/300"
+            alt="Gallery 4"
+            data-edit-type="image"
+          />
+          <div class="image-controls">
+            <button class="btn-ghost change-url-btn">Change URL</button>
+            <button class="btn-ghost random-image-btn">Random</button>
+            <button class="btn-ghost revert-image-btn">Original</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p
+        class="section-text"
+        data-edit-type="text"
+        data-edit-key="contactText"
+      >
+        Want to work together or just say hi? Reach out:
+      </p>
+      <div class="contact-info">
+        <p data-edit-type="text" data-edit-key="contactEmail">
+          Email: hello@example.com
+        </p>
+        <p data-edit-type="text" data-edit-key="contactGitHub">
+          GitHub: github.com/yourusername
+        </p>
+        <p data-edit-type="text" data-edit-key="contactLinkedIn">
+          LinkedIn: linkedin.com/in/yourprofile
+        </p>
+      </div>
+
+     <form
+  class="contact-form"
+  action="https://formspree.io/f/xeobjvaa"
+  method="POST"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+  />
+  <input
+    type="email"
+    name="_replyto"
+    placeholder="Your Email"
+    required
+  />
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    rows="4"
+    required
+  ></textarea>
+    <!-- Optional hidden field: subject line in email -->
+      <input type="hidden" name="_next" value="https://your-site.com/thank-you.html" />
+  <!-- <input
+    type="hidden"
+    name="_subject"
+    value="New message from your portfolio site"
+  /> -->
+
+  <button type="submit" class="btn-primary">Send</button>
+</form>
+<p class="demo-note">
+  This form sends messages directly to my email using Formspree.
+</p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p
+        data-edit-type="text"
+        data-edit-key="footerText"
+      >
+        © 2025 Alex. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
